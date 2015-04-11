@@ -43,7 +43,8 @@
         "Respond": "1.4.2.0",
         "SwissKnife.T4.AppSettings": "0.0.5.0",
         "WebGrease": "1.6.0.0",
-        "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3"
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3",
+        "System.Runtime": "4.0.20.0-beta-22605"
     },
     "commands": {
         "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004"
@@ -51,8 +52,6 @@
     "frameworks": {
         "aspnet50": {
             "frameworkAssemblies": {
-                "System.Configuration": "4.0.0.0",
-                "System.Web": "4.0.0.0"
             }
         }
     },

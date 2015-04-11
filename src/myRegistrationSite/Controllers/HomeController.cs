@@ -38,12 +38,12 @@ namespace myRegistrationSite.Controllers
                 smtpClient.Credentials = JsonConvert.DeserializeObject<NetworkCredential>(AppSettings.Smtp.Credential);
                 using (smtpClient)
                 {
-                    smtpClient.Send(
-                        from: AppSettings.Smtp.From,
-                        recipients: attendee.Email,
-                        subject: "IT勉強会 参加申し込みサイト - 参加登録完了のお知らせ",
-                        body: "参加登録が完了しました。\n参加申し込みありがとうございました。"
-                    );
+                    //smtpClient.Send(
+                    //    from: AppSettings.Smtp.From,
+                    //    recipients: attendee.Email,
+                    //    subject: "IT勉強会 参加申し込みサイト - 参加登録完了のお知らせ",
+                    //    body: "参加登録が完了しました。\n参加申し込みありがとうございました。"
+                    //);
                 }
             }
 
