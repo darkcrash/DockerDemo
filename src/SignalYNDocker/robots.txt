@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /CreateNewRoom
+Disallow: /Room
+Disallow: /room
+Disallow: /LogPerformance
