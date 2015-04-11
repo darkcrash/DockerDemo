@@ -1,0 +1,71 @@
+{
+    "webroot": "wwwroot",
+    "version": "1.0.0-*",
+    "dependencies": {
+        "Newtonsoft.Json": "7.0.1.0-beta2",
+        "Kestrel": "1.0.0.0-beta3",
+        "Antlr": "3.5.0.2",
+        "AppSettingsMembershipProvider": "1.0.0.2",
+        "bootstrap": "3.3.4.0",
+        "HttpAuthenticationModule": "1.1.0.0",
+        "jQuery.Validation": "1.13.1.0",
+        "Microsoft.AspNet.Diagnostics": "1.0.0-beta3",
+        "Microsoft.AspNet.Diagnostics.Entity": "7.0.0-beta3",
+        "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta3",
+        "Microsoft.AspNet.Security.Cookies": "1.0.0-beta3",
+        "Microsoft.AspNet.Mvc": "6.0.0.0-beta3",
+        "Microsoft.AspNet.Mvc.Core": "6.0.0-beta3",
+        "Microsoft.AspNet.Mvc.Razor": "6.0.0-beta3",
+        "Microsoft.AspNet.Mvc.Razor.Host": "6.0.0-beta3",
+        "Microsoft.AspNet.Mvc.WebApiCompatShim": "6.0.0-beta3",
+        "Microsoft.AspNet.Razor": "4.0.0.0-beta3",
+        "Microsoft.AspNet.Razor.Runtime": "4.0.0.0-beta3",
+        "Microsoft.AspNet.Http": "1.0.0-beta3",
+        "Microsoft.AspNet.Http.Core": "1.0.0-beta3",
+        "Microsoft.AspNet.Http.Extensions": "1.0.0-beta3",
+        "Microsoft.AspNet.Http.Interfaces": "1.0.0-beta3",
+        "Microsoft.AspNet.Web.Optimization": "1.1.3.0",
+        "Microsoft.AspNet.WebUtilities": "1.0.0-beta3",
+        "Microsoft.AspNet.WebPages": "3.2.3.0",
+        "Microsoft.AspNet.Hosting": "1.0.0-beta3",
+        //"Microsoft.AspNet.Server.IIS": "1.0.0-beta3",
+        //"Microsoft.AspNet.Server.WebListener": "1.0.0-beta3",
+        "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta3",
+        "Microsoft.AspNet.StaticFiles": "1.0.0-beta3",
+        "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta3",
+        "Microsoft.Framework.CodeGenerators.Mvc": "1.0.0-beta3",
+        "Microsoft.Framework.Logging": "1.0.0-beta3",
+        "Microsoft.Framework.Logging.Console": "1.0.0-beta3",
+        "Microsoft.jQuery.Unobtrusive.Validation": "3.2.3.0",
+        "Microsoft.Web.Infrastructure": "1.0.0.0",
+        "Microsoft.Net.Http.Server": "1.0.0-beta3",
+        "Modernizr": "2.8.3.0",
+        "Respond": "1.4.2.0",
+        "SwissKnife.T4.AppSettings": "0.0.5.0",
+        "WebGrease": "1.6.0.0",
+        "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta3"
+    },
+    "commands": {
+        "kestrel": "Microsoft.AspNet.Hosting --server Kestrel --server.urls http://localhost:5004"
+    },
+    "frameworks": {
+        "aspnet50": {
+            "frameworkAssemblies": {
+                "System.Configuration": "4.0.0.0",
+                "System.Web": "4.0.0.0"
+            }
+        }
+    },
+    "bundleExclude": [
+        "node_modules",
+        "bower_components",
+        "**.kproj",
+        "**.user",
+        "**.vspscc"
+    ],
+    "exclude": [
+        "wwwroot",
+        "node_modules",
+        "bower_components"
+    ]
+}
