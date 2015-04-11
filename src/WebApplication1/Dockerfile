@@ -1,4 +1,4 @@
-FROM microsoft/aspnet:1.0.0-beta2
+FROM microsoft/aspnet:1.0.0-beta3
 # copy the contents of the local directory to /app/ on the image
 COPY . /app
 # set the working directory for subsequent commands
