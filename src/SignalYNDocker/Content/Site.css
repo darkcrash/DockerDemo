@@ -1,0 +1,344 @@
+﻿* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+body {
+    background-color: #fff;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+header {
+    height: 3em;
+    line-height: 3em;
+    display: block;
+    background-color: #eee;
+    font-weight: bold;
+    position: relative;
+}
+
+canvas {
+    background-image: url(images/blank.png);
+}
+
+header a.go-home {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-image: url(images/back.png);
+    background-size: contain;
+    opacity: 0.5;
+}
+
+    header a.go-home:hover {
+        opacity: 0.3;
+    }
+
+.main {
+    margin-top: 10px;
+    display: inline-block;
+    width: 85%;
+    max-width: 600px;
+}
+
+    .main * {
+        width: 100%;
+    }
+
+#fig01 {
+    float: left;
+    width: 105px;
+    margin-right: 8px;
+}
+
+.app-description {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 95%;
+    background-color: #fff;
+    border-radius: 4px 4px;
+    text-align: left;
+    padding: 0px 8px;
+}
+
+    .app-description:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+.regions h2 {
+    margin: 8px 0 0 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+.regions ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.qr-code {
+    width: auto;
+    zoom: 0.2;
+}
+
+a {
+    color: rgb(18, 132, 255);
+    text-decoration: none;
+}
+
+
+.btn {
+    display: inline-block;
+    width: 100%;
+    line-height: 2.5em;
+    cursor: pointer;
+}
+
+    .btn:hover {
+        opacity: 0.7;
+    }
+
+.btn-primary {
+    background-color: rgb(18, 132, 255);
+    border: none;
+    color: white;
+    height: 2.5em;
+    border-radius: 4px 4px;
+}
+
+.btn-inline {
+    display: inline-block;
+    width: auto;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+input.room-number {
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #ccc;
+    font-size: 150%;
+}
+
+footer {
+    margin-top: 32px;
+}
+
+    footer .powered-by {
+        margin: 32px 32px;
+        font-size: 12px;
+        color: #ccc;
+    }
+
+        footer .powered-by a {
+            display: inline-block;
+            height: 16px;
+            line-height: 16px;
+            color: #ccc;
+            background-repeat: no-repeat;
+        }
+
+        footer .powered-by .aspnet {
+            background-image: url(images/aspnet-g-16.png);
+            padding-left: 26px;
+        }
+
+        footer .powered-by .typescript {
+            background-image: url(images/typescript-g-16.png);
+            padding-left: 18px;
+        }
+
+        footer .powered-by .angularjs {
+            background-image: url(images/angularjs-g-16.png);
+            padding-left: 18px;
+        }
+
+        footer .powered-by .chartjs {
+            background-image: url(images/chart-js-g-16.png);
+            padding-left: 18px;
+        }
+
+        footer .powered-by .azure-websites {
+            background-image: url(images/azure_websites_b16.png);
+            padding-left: 18px;
+        }
+        
+        footer .powered-by .real-favicon-gen {
+            background-image: url(images/real-favicon-gen-g-16.png);
+            padding-left: 18px;
+        }
+
+        footer .powered-by .GitHub {
+            background-image: url(images/GitHub-Mark-g-16px.png);
+            padding-left: 18px;
+        }
+
+
+/* room page */
+
+/* room page - room number */
+.room-number-container div {
+    width: 110px;
+}
+
+.room-number-container {
+    width: auto;
+    display: inline-block;
+    position: relative;
+}
+
+.room-page .room-number {
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.room-page .qrcode-of-roomurl {
+    width: 52px;
+    position: absolute;
+    top: 0;
+    left: -60px;
+    z-index: 1;
+    -moz-transition: all linear 0.3s;
+    -o-transition: all linear 0.3s;
+    -webkit-transition: all linear 0.3s;
+    transition: all linear 0.3s;
+}
+
+    .room-page .qrcode-of-roomurl.zoom {
+        width: 270px;
+        left: -80px;
+    }
+
+.room-page .short-url {
+    margin-top: 0px;
+    color: rgb(18, 132, 255);
+    font-weight: bold;
+    font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+}
+
+/* room page - options */
+
+ul.options,
+ul.options li {
+    margin: 0;
+    padding: 0;
+}
+
+    ul.options li {
+        list-style: none;
+        display: inline-block;
+        width: 50%;
+        padding: 0px 4px;
+    }
+
+.room-page a {
+    display: inline-block;
+    border: solid 1px;
+    height: 2.5em;
+    line-height: 2.5em;
+    cursor: pointer;
+    border-radius: 4px 4px;
+}
+
+    .room-page a:hover {
+        opacity: 0.8;
+    }
+
+ul.options li a.option-Yes {
+    color: #080;
+    border-color: #080;
+}
+
+ul.options li a.option-No {
+    color: #f44;
+    border-color: #f44;
+}
+
+ul.options li a.option-Yes.selected-true {
+    background-color: #080;
+    color: white;
+}
+
+ul.options li a.option-No.selected-true {
+    background-color: #f44;
+    color: white;
+}
+
+/* room page - chart & counter */
+
+.chart-container {
+    display: inline-block;
+    width: 200px;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.counters {
+    position: absolute;
+    top: 88px;
+}
+
+    .counters .counter {
+        background-color: transparent;
+        font-size: 150%;
+        font-weight: bold;
+        display: inline-block;
+        width: 50%;
+        text-align: right;
+        padding: 0 6px;
+    }
+
+        .counters .counter:last-child {
+            text-align: left;
+        }
+
+.chart-container .separator {
+    background-color: transparent;
+    font-size: 150%;
+    font-weight: bold;
+    position: absolute;
+    top: 87px;
+}
+
+.counters .counter:last-child .separator {
+    display: none;
+}
+
+/* room page - owner only controlls */
+
+.owner-only {
+    display: none;
+}
+
+.owner .owner-only {
+    display: block;
+}
+
+.owner .options {
+    display: none;
+}
+
+a.reset {
+    color: white;
+    background-color: rgb(18, 132, 255);
+    border-color: rgb(18, 132, 255);
+}

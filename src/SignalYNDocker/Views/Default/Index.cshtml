@@ -1,0 +1,53 @@
+﻿@{
+}
+
+<div ng-app="theApp" ng-controller="homeController as ctrl" class="home-page">
+    @*<div>
+            @QRCode.Render(Url.AppUrl(), scale: 10, cssClass: "qr-code")
+        </div>*@
+
+    <img src="~/Content/images/fig01.png" id="fig01" />
+    <div class="app-description">
+        <section>
+            @Localize.appDescription
+        </section>
+        <section class="regions">
+            <h2>Other regions</h2>
+            <ul>
+                @{
+                    var regions = AppSettings.App.Regions.FromJson<Dictionary<string, string>>();
+                    foreach (var item in regions)
+                    {
+                        <li><a href="@item.Value">@item.Key</a></li>
+                    }
+                }
+            </ul>
+        </section>
+    </div>
+
+    <p>
+        Enter room number.
+    </p>
+    <p>
+        <input type="number" value="" name="id" autofocus required class="room-number" ng-model="roomNumber" />
+    </p>
+    <p>
+        <a class="btn btn-primary" ng-href="/Room/{{roomNumber}}" ng-class="{disabled:roomNumber.toString().length != 4}">
+            Enter
+        </a>
+    </p>
+
+    <div>
+        <form id="createNewRoomForm" method="post" action="@Url.Action("CreateNewRoom")">
+            @Html.AntiForgeryToken()
+            <a class="btn btn-inline" ng-click="ctrl.createNewRoom()">or Create New Room</a>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(function () { $.get('/WarmUp', { _: $.now() }); });
+    </script>
+    <script src="~/app.js"></script>
+}

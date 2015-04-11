@@ -1,0 +1,59 @@
+﻿@model Room
+@{
+    var isOwner = Model.OwnerUserID == this.User.Identity.Name;
+    var urlOfThisRoom = Model.Url;
+    ViewBag.HtmlTitle = string.Format(" - Room Number {0}", Model.RoomNumber);
+    ViewBag.TweetText = string.Format("Let's join SignalYN Room {0}!", Model.RoomNumber);
+}
+@section headerLeft{
+    <a href="/" class="go-home"></a>
+}
+
+<div ng-app="theApp" ng-controller="roomController as ctrl" class="@(isOwner ? "owner" : "") room-page">
+
+    <div>
+        <div class="room-number-container">
+            <div>Room number</div>
+            <div class="room-number">
+                @Model.RoomNumber
+            </div>
+            <div class="short-url">
+                @Model.ShortUrl
+            </div>
+            <div class="qrcode-of-roomurl"
+                 onclick="$(this).toggleClass('zoom')">
+                @QRCode.Render(urlOfThisRoom, scale: 10)
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <canvas id="chart" width="200" height="200"></canvas>
+        <div class="counters">
+            <span class="counter" ng-repeat="option in options" ng-bind="option.count">
+            </span>
+        </div>
+        <div class="separator">:</div>
+    </div>
+
+    <ul class="options">
+        <li ng-repeat="option in options">
+            <a ng-click="ctrl.postAnswer(option)"
+               ng-class="'selected-'+option.selected + ' option-'+option.text">
+                <span class="text" ng-bind="option.text"></span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="owner-only">
+        <a ng-click="ctrl.reset()" class="reset">Reset</a>
+    </div>
+
+</div>
+@section scripts{
+    <script>
+        var _app = _app || {};
+        _app.roomNumber = @Model.RoomNumber;
+    </script>
+    <script src="~/app.js"></script>
+}
