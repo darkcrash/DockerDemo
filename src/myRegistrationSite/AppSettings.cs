@@ -1,4 +1,4 @@
-﻿using Microsoft.Framework.ConfigurationModel;
+﻿using System.Configuration;
 
 namespace myRegistrationSite
 {
@@ -6,52 +6,44 @@ namespace myRegistrationSite
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
     public static class AppSettings
     {
-
-        private static IConfiguration Config
-        {
-            get
-            {
-                return Startup.Configuration;
-            }
-        }
         public static string ClientValidationEnabled
         {
-            get { return Config["ClientValidationEnabled"]; }
+            get { return ConfigurationManager.AppSettings["ClientValidationEnabled"]; }
         }
 
         public static class Smtp
         {
             public static string Credential
             {
-                get { return Config["smtp.credential"]; }
+                get { return ConfigurationManager.AppSettings["smtp.credential"]; }
             }
 
             public static string From
             {
-                get { return Config["smtp.from"]; }
+                get { return ConfigurationManager.AppSettings["smtp.from"]; }
             }
 
             public static string Network
             {
-                get { return Config["smtp.network"]; }
+                get { return ConfigurationManager.AppSettings["smtp.network"]; }
             }
         }
 
         public static string UnobtrusiveJavaScriptEnabled
         {
-            get { return Config["UnobtrusiveJavaScriptEnabled"]; }
+            get { return ConfigurationManager.AppSettings["UnobtrusiveJavaScriptEnabled"]; }
         }
 
         public static class Webpages
         {
             public static string Enabled
             {
-                get { return Config["webpages:Enabled"]; }
+                get { return ConfigurationManager.AppSettings["webpages:Enabled"]; }
             }
 
             public static string Version
             {
-                get { return Config["webpages:Version"]; }
+                get { return ConfigurationManager.AppSettings["webpages:Version"]; }
             }
         }
     }
