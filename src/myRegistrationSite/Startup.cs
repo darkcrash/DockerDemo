@@ -38,6 +38,8 @@ namespace myRegistrationSite
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
         {
+            loggerfactory.AddConsole();
+
             // Add the following to the request pipeline only in development environment.
             if (string.Equals(env.EnvironmentName, "Development", StringComparison.OrdinalIgnoreCase))
             {
@@ -61,6 +63,7 @@ namespace myRegistrationSite
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
+                
 
                 routes.MapRoute(
                     name: "default",
@@ -70,7 +73,7 @@ namespace myRegistrationSite
                 // Uncomment the following line to add a route for porting Web API 2 controllers.
                 // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
 
-                BundleConfig.RegisterBundles(BundleTable.Bundles);
+                //BundleConfig.RegisterBundles(BundleTable.Bundles);
 
 
             });
