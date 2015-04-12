@@ -1,21 +1,13 @@
 {
-    "Data": {
-        "DefaultConnection": {
-            "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-WebApplication1-f9a6211b-3e7c-4dfd-9f04-a2661bfd00b0;Trusted_Connection=True;MultipleActiveResultSets=true"
-        }
-    },
-    "EntityFramework": {
-        "AppDbContext": {
-            "ConnectionString": "Data:DefaultConnection:ConnectionString"
-        }
-    },
     "appSettings": {
-
+        "ClientValidationEnabled": "true",
+        //"smtp.credential": "",
+        //"smtp.from": "",
+        //"smtp.network": "",
+        "UnobtrusiveJavaScriptEnabled": "true",
+        "webpages:Enabled": "false",
+        "webpages:Version": "3.0.0.0",
+        "User.admin": "md5:5f4dcc3b5aa765d61d8327deb882cf99",
+        "enableSimpleMembership": "false"
     }
-    //"system.web.webPages.razor": {
-    //    "pages": {
-    //        "pageBaseType": "System.Web.Mvc.WebViewPage",
-    //        "namespaces": [ "System.Web.Optimization" ]
-    //    }
-    //}
 }

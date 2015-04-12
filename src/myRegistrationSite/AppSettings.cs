@@ -1,4 +1,4 @@
-﻿using System.Configuration;
+﻿using Microsoft.Framework.ConfigurationModel;
 
 namespace myRegistrationSite
 {
@@ -6,44 +6,52 @@ namespace myRegistrationSite
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute]
     public static class AppSettings
     {
+        private static IConfiguration Config
+        {
+            get
+            {
+                return Startup.Configuration.GetSubKey("appSettings");
+            }
+        }
         public static string ClientValidationEnabled
         {
-            get { return ConfigurationManager.AppSettings["ClientValidationEnabled"]; }
+            //get { return ConfigurationManager.AppSettings["ClientValidationEnabled"]; }
+            get { return Config["ClientValidationEnabled"]; }
         }
 
         public static class Smtp
         {
             public static string Credential
             {
-                get { return ConfigurationManager.AppSettings["smtp.credential"]; }
+                get {  return Config["smtp.credential"]; }
             }
 
             public static string From
             {
-                get { return ConfigurationManager.AppSettings["smtp.from"]; }
+                get { return Config["smtp.from"]; }
             }
 
             public static string Network
             {
-                get { return ConfigurationManager.AppSettings["smtp.network"]; }
+                get { return Config["smtp.network"]; }
             }
         }
 
         public static string UnobtrusiveJavaScriptEnabled
         {
-            get { return ConfigurationManager.AppSettings["UnobtrusiveJavaScriptEnabled"]; }
+            get { return Config["UnobtrusiveJavaScriptEnabled"]; }
         }
 
         public static class Webpages
         {
             public static string Enabled
             {
-                get { return ConfigurationManager.AppSettings["webpages:Enabled"]; }
+                get { return Config["webpages:Enabled"]; }
             }
 
             public static string Version
             {
-                get { return ConfigurationManager.AppSettings["webpages:Version"]; }
+                get { return Config["webpages:Version"]; }
             }
         }
     }

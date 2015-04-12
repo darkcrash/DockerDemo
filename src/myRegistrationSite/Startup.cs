@@ -12,7 +12,7 @@ using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
-using System.Web.Optimization;
+using Microsoft.AspNet.FileProviders;
 
 namespace myRegistrationSite
 {
@@ -34,6 +34,7 @@ namespace myRegistrationSite
 
             // Add MVC services to the services container.
             services.AddMvc();
+
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerfactory)
@@ -54,6 +55,8 @@ namespace myRegistrationSite
                 // send the request to the following path or controller action.
                 app.UseErrorHandler("/Home/Error");
             }
+
+            var data = env.WebRootFileProvider.GetDirectoryContents("App_Data");
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
